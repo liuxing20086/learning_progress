@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <!-- safira 浏览器相关的meta设置 -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  <meta name="apple-mobile-web-app-title" content="AI Design">
+  <!-- UC浏览器相关的meta设置 -->
+  <meta name="screen-orientation" content="portrait">
+  <meta name="full-screen" content="yes">
+  <meta name="browsermode" content="application">
+  <meta name="layoutmode" content="fitscreen">
+  <meta name="nightmode" content="disable">
+  <meta name="imagemode" content="force">
+  <!-- QQ 浏览器相关的meta设置 -->
+  <meta name="x5-orientation" content="portrait">
+  <meta name="x5-fullscreen" content="true">
+  <meta name="x5-page-mode" content="app">
+  <!-- wphone 点击无高光 -->
+  <meta name="msapplication-tap-highlight" content="no">
+  <!-- 常用meta -->
+  <meta http-equiv="x-ua-compatible" content="IE=Edge">
+  <meta name="renderer" content="webkit">
+  <meta name="format-detection" content="telephone=no, email=no">
+  <meta name="description" content="AI Design taurus vue component ">
+  <meta name="keywords" content="AI Design taurus vue component">
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no, width=device-width" />
+  <title>test</title>
+  <!-- start:css -->
+  <style>
+    .click_box{
+      display: none;
+      width: 200px;
+      height: 100px;
+      background: pink;
+      border: 1px solid red;
+      text-align: center;
+    }
+    .div_hover{
+      position: relative;
+      display: inline-block;
+      padding: 20 20px;
+      border: 1px solid pink;
+      text-align: center;
+    }
+    .box_hover{
+      display: none;
+      position: absolute;
+      top: 20px;
+      width: 200px;
+      height: 100px;
+      background: pink;
+      color: #666;
+      border: 1px solid red;
+    }
+    .div_hover:hover{
+      color: pink;
+    }
+    .div_hover:hover .box_hover{
+      display: block;
+    }
+  </style>
+  <!-- end:css -->
+</head>
+<body>
+  <div class="box">
+    <button id="click_btn" onClick="show_Hidden()">我是点击事件</button>
+    <div class="div_hover">
+      <span>我是hover事件</span>
+      <div class="box_hover">我是内容内容-我是内容内容</div>
+    </div>
+    <div class="click_box">我是内容内容-我是内容内容</div>
+  </div>
+</body>
+<script type="text/javascript">
+    function show_Hidden() {
+      var btn = document.getElementById("click_btn");
+      var box = document.getElementsByClassName("click_box");
+      if(box[0].style.display === "block"){
+        box[0].style.display = 'none';
+      } else {
+        box[0].style.display = 'block';
+      }
+    }
+  </script>
+</html>
